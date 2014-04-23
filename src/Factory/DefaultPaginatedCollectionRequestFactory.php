@@ -8,16 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Factory;
+namespace AlphaLabs\Pagination\Factory;
 
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequest;
-use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface;
 
 /**
  * The default pagination factory provides the default pagination
  * (useful to provide a base pagination information if no pagination information is provided elsewhere).
  *
- * @package AlphaLabs\Pagination\PaginatedCollection\Factory
+ * @package AlphaLabs\Pagination\Factory
  *
  * @author  Sylvain Mauduit <swop@swop.io>
  */

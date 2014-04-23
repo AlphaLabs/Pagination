@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Provider;
+namespace AlphaLabs\Pagination\Provider;
 
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface;
 

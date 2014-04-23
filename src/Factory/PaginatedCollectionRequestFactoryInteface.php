@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Factory;
+namespace AlphaLabs\Pagination\Factory;
 
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface;
 
@@ -16,7 +16,7 @@ use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface
  * The PaginatedCollection factory interface describe the method to implement in order to build PaginatedCollection
  * objects.
  *
- * @package AlphaLabs\Pagination\PaginatedCollection\Factory
+ * @package AlphaLabs\Pagination\Factory
  *
  * @author  Sylvain Mauduit <swop@swop.io>
  */

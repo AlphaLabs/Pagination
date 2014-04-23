@@ -12,7 +12,7 @@ namespace AlphaLabs\Pagination\Pager;
 
 use AlphaLabs\Pagination\Exception\InvalidRequestedPage;
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface;
-use AlphaLabs\Pagination\PaginatedCollection\Provider\PaginatedCollectionRequestProviderInterface;
+use AlphaLabs\Pagination\Provider\PaginatedCollectionRequestProviderInterface;
 use Pagerfanta\Adapter\AdapterInterface;
 use Pagerfanta\Exception\LessThan1CurrentPageException;
 use Pagerfanta\Exception\OutOfRangeCurrentPageException;

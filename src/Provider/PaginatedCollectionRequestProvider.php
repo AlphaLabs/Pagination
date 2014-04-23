@@ -8,16 +8,16 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Provider;
+namespace AlphaLabs\Pagination\Provider;
 
-use AlphaLabs\Pagination\PaginatedCollection\Factory\PaginatedCollectionRequestFactoryInterface;
+use AlphaLabs\Pagination\Factory\PaginatedCollectionRequestFactoryInterface;
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface;
 
 /**
  * The paginated collection request provider is able to provide a valid PaginatedCollectionRequestInterface object.
  * Before being validated, the PaginatedCollectionRequestInterface build operation is delegated to the injected factory.
  *
- * @package AlphaLabs\Pagination\PaginatedCollection\Provider
+ * @package AlphaLabs\Pagination\Provider
  *
  * @author  Sylvain Mauduit <swop@swop.io>
  */

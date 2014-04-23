@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Factory;
+namespace AlphaLabs\Pagination\Factory;
 
 use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequest;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 /**
  * Build a PaginatedCollectionRequestInterface object based on the current request
  *
- * @package AlphaLabs\Pagination\PaginatedCollection\Factory
+ * @package AlphaLabs\Pagination\Factory
  *
  * @author  Sylvain Mauduit <swop@swop.io>
  */

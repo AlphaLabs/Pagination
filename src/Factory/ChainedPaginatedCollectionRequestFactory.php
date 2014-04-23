@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace AlphaLabs\Pagination\PaginatedCollection\Factory;
+namespace AlphaLabs\Pagination\Factory;
 
 /**
  * This factory can delegate the build operation to a chain of other factories.
  * The first factory capable to build a pagination information object is used.
  *
- * @package AlphaLabs\Pagination\PaginatedCollection\Factory
+ * @package AlphaLabs\Pagination\Factory
  *
  * @author  Sylvain Mauduit <swop@swop.io>
  */
