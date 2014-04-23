@@ -21,25 +21,9 @@ namespace AlphaLabs\Pagination\Factory;
 class ChainedPaginatedCollectionRequestFactory implements PaginatedCollectionRequestFactoryInterface
 {
     /** @var array */
-    private $factories;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->factories = [];
-    }
-
-    /**
-     * Adds a factory in the factory chain
-     *
-     * @param PaginatedCollectionRequestFactoryInterface $factory
-     */
-    public function addFactory(PaginatedCollectionRequestFactoryInterface $factory)
-    {
-        $this->factories[] = $factory;
-    }
+    private $factories = [];
+    /** @var array */
+    private $sorted = [];
 
     /**
      * {@inheritDoc}
@@ -49,7 +33,7 @@ class ChainedPaginatedCollectionRequestFactory implements PaginatedCollectionReq
         $paginationInfo = null;
 
         /** @var PaginatedCollectionRequestFactoryInterface $factory */
-        foreach ($this->factories as $factory) {
+        foreach ($this->getFactories() as $factory) {
             $paginationInfo = $factory->build();
 
             if (!is_null($paginationInfo)) {
@@ -58,5 +42,43 @@ class ChainedPaginatedCollectionRequestFactory implements PaginatedCollectionReq
         }
 
         return $paginationInfo;
+    }
+
+    /**
+     * Adds a factory in the factory chain
+     *
+     * @param PaginatedCollectionRequestFactoryInterface $factory
+     * @param int                                        $priority
+     */
+    public function addFactory(PaginatedCollectionRequestFactoryInterface $factory, $priority = 0)
+    {
+        $this->factories[$priority][] = $factory;
+
+        unset($this->sorted);
+    }
+
+    /**
+     * Gets the sorted factories
+     *
+     * @return array
+     */
+    public function getFactories()
+    {
+        if (!isset($this->sorted)) {
+            $this->sortFactories();
+        }
+
+        return $this->sorted;
+    }
+
+    /**
+     * Sorts the internal list of factories by priority.
+     */
+    private function sortFactories()
+    {
+        $this->sorted = [];
+
+        krsort($this->factories);
+        $this->sorted = call_user_func_array('array_merge', $this->factories);
     }
 }
