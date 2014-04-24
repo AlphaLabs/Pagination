@@ -32,7 +32,7 @@ class RequestBasedPaginatedCollectionRequestFactory implements PaginatedCollecti
 
     /**
      * @param RequestStack $requestStack
-     * @param   string     $itemsPerPageKey
+     * @param string       $itemsPerPageKey
      * @param string       $pageKey
      */
     public function __construct(RequestStack $requestStack, $itemsPerPageKey, $pageKey)
@@ -45,13 +45,15 @@ class RequestBasedPaginatedCollectionRequestFactory implements PaginatedCollecti
     /**
      * {@inheritDoc}
      */
-    public function build()
+    public function build(Request $request = null)
     {
-        if (null === $request = $this->requestStack->getCurrentRequest()) {
-            return null;
+        if (null === $request) {
+            if (null === $request = $this->requestStack->getCurrentRequest()) {
+                return null;
+            }
         }
 
-        $page = $this->extractValue($request, $this->pageKey);
+        $page         = $this->extractValue($request, $this->pageKey);
         $itemsPerPage = $this->extractValue($request, $this->itemsPerPageKey);
 
         if (is_null($page) && is_null($itemsPerPage)) {
@@ -66,7 +68,7 @@ class RequestBasedPaginatedCollectionRequestFactory implements PaginatedCollecti
     }
 
     /**
-     * Extract form the request the value of the given key.
+     * Extract from the request the value of the given key.
      * This method can be override in order to change the extraction logic.
      *
      * The method should return null if the key isn't found in the request.

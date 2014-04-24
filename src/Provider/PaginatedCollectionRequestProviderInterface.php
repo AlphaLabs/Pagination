@@ -15,9 +15,9 @@ use AlphaLabs\Pagination\PaginatedCollection\PaginatedCollectionRequestInterface
 interface PaginatedCollectionRequestProviderInterface
 {
     /**
-     * Provide the actual pagination request
+     * Provide the current pagination request
      *
-     * Returns null if the current context does not provide any pagination infotmation.
+     * Returns null if the current context does not provide any pagination information.
      *
      * @return PaginatedCollectionRequestInterface|null
      */
